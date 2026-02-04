@@ -2,8 +2,8 @@ import React from 'react'
 import './Header.css'
 
 const Header = () => {
-  // Simple path - logo is in public folder, accessible from root
-  const logoPath = '/logo.png'
+  // Use base URL for proper path resolution in GitHub Pages
+  const logoPath = `${import.meta.env.BASE_URL}logo.png`
   
   return (
     <header className="header">
@@ -16,7 +16,7 @@ const Header = () => {
             onError={(e) => {
               console.error('Logo failed:', e.target.src)
               // Try original filename as fallback
-              const fallback = '/final file all wt-17 (1).png'
+              const fallback = `${import.meta.env.BASE_URL}final file all wt-17 (1).png`
               if (!e.target.src.includes('final file')) {
                 console.log('Trying fallback:', fallback)
                 e.target.src = fallback

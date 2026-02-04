@@ -33,9 +33,13 @@ const Rebranding = () => {
                     {/* Logo */}
                     <div className="logo-wrapper">
                         <img
-                            src="/logo.png"
+                            src={`${import.meta.env.BASE_URL}logo.png`}
                             alt="WorthyTen Logo"
                             className="rebranding-logo"
+                            onError={(e) => {
+                                // Try fallback logo
+                                e.target.src = `${import.meta.env.BASE_URL}final file all wt-17 (1).png`
+                            }}
                         />
                     </div>
 
