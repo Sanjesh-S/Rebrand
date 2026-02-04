@@ -1,0 +1,15 @@
+.footer {
+  padding: var(--spacing-md) 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border-color);
+  margin-top: var(--spacing-xl);
+}
+
+.footer p {
+  font-size: 0.875rem;
+  color: var(--text-tertiary);
+  margin: 0.25rem 0;
+  text-align: center;
+  font-weight: 300;
+}

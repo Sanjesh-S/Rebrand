@@ -1,0 +1,65 @@
+# WorthyTen Rebranding Website
+
+A premium, professional React-based rebranding page for WorthyTen.
+
+## Features
+
+- ⚡ Built with React 18 and Vite
+- 🎨 Premium, modern design
+- 📱 Fully responsive
+- ✨ Smooth animations and transitions
+- 🚀 Fast and optimized
+
+## Getting Started
+
+### Installation
+
+```bash
+npm install
+```
+
+### Development
+
+```bash
+npm run dev
+```
+
+The app will open at `http://localhost:3000`
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+## Project Structure
+
+```
+├── src/
+│   ├── components/
+│   │   ├── Header.jsx
+│   │   ├── Hero.jsx
+│   │   ├── Branches.jsx
+│   │   ├── BranchCard.jsx
+│   │   └── Footer.jsx
+│   ├── App.jsx
+│   ├── App.css
+│   ├── main.jsx
+│   └── index.css
+├── index.html
+├── package.json
+└── vite.config.js
+```
+
+## Technologies
+
+- React 18
+- Vite
+- Modern CSS with CSS Variables
+- Responsive Design
