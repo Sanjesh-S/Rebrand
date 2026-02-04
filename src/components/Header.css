@@ -1,0 +1,46 @@
+.header {
+  padding: var(--spacing-md) 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: var(--transition);
+}
+
+.header:hover {
+  background: rgba(0, 0, 0, 0.95);
+  border-bottom-color: var(--border-hover);
+}
+
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  max-width: 220px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
+  transition: var(--transition);
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+}
+
+@media (max-width: 768px) {
+  .logo {
+    max-width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    max-width: 140px;
+  }
+}
