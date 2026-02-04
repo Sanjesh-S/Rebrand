@@ -33,12 +33,17 @@ const Rebranding = () => {
                     {/* Logo */}
                     <div className="logo-wrapper">
                         <img
-                            src={`${import.meta.env.BASE_URL}logo.png`}
+                            src={`${import.meta.env.BASE_URL || '/'}logo.png`.replace(/\/+/g, '/')}
                             alt="WorthyTen Logo"
                             className="rebranding-logo"
                             onError={(e) => {
+                                console.error('Rebranding logo failed:', e.target.src, 'BASE_URL:', import.meta.env.BASE_URL)
                                 // Try fallback logo
-                                e.target.src = `${import.meta.env.BASE_URL}final file all wt-17 (1).png`
+                                const baseUrl = import.meta.env.BASE_URL || '/'
+                                e.target.src = `${baseUrl}final file all wt-17 (1).png`.replace(/\/+/g, '/')
+                            }}
+                            onLoad={() => {
+                                console.log('✓ Rebranding logo loaded successfully')
                             }}
                         />
                     </div>

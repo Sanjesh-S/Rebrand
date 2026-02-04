@@ -2,8 +2,15 @@ import React from 'react'
 import './Header.css'
 
 const Header = () => {
-  // Use base URL for proper path resolution in GitHub Pages
-  const logoPath = `${import.meta.env.BASE_URL}logo.png`
+  // Use Vite's BASE_URL for proper path resolution in GitHub Pages
+  // Construct the logo path ensuring proper base path handling
+  const getAssetPath = (path) => {
+    const baseUrl = import.meta.env.BASE_URL || '/'
+    // Remove leading slash from path if present, then combine with baseUrl
+    const cleanPath = path.startsWith('/') ? path.slice(1) : path
+    return `${baseUrl}${cleanPath}`.replace(/\/+/g, '/')
+  }
+  const logoPath = getAssetPath('logo.png')
   
   return (
     <header className="header">
@@ -14,9 +21,9 @@ const Header = () => {
             alt="WorthyTen Logo" 
             className="logo"
             onError={(e) => {
-              console.error('Logo failed:', e.target.src)
+              console.error('Logo failed:', e.target.src, 'BASE_URL:', import.meta.env.BASE_URL)
               // Try original filename as fallback
-              const fallback = `${import.meta.env.BASE_URL}final file all wt-17 (1).png`
+              const fallback = getAssetPath('final file all wt-17 (1).png')
               if (!e.target.src.includes('final file')) {
                 console.log('Trying fallback:', fallback)
                 e.target.src = fallback
